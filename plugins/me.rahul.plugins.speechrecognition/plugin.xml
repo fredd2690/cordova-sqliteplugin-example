@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="me.rahul.plugins.speechrecognition"
+    version="0.0.1">
+    
+    <name>SpeechRecognition</name>
+    <description>Convert Speech to Text</description>
+    <engines><engine name="cordova" version=">=3.0.0" /></engines>
+    
+    <js-module src="www/SpeechRecognition.js" name="SpeechRecognition">
+        <clobbers target="window.speechrecognition" />
+    </js-module>
+    
+    <!-- iOS -->
+    
+    <platform name="ios">
+        
+        <config-file target="config.xml" parent="/*">
+            <feature name="SpeechRecognition">
+                <param name="ios-package" value="SpeechRecognition"/>
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/SpeechRecognition.h" />
+        <source-file src="src/ios/SpeechRecognition.m" />
+        
+        <header-file src="src/ios/SpeechToTextModule.h" />
+        <header-file src="src/ios/UIProgressAlertView.h" />
+        <header-file src="src/ios/UIWaveAlertView.h" />
+        <header-file src="src/ios/WaveDisplay.h" />
+        
+        <source-file src="src/ios/frameworks/libSpeechToText.a" framework="true" />
+        
+        <framework src='AVFoundation.framework' />
+        <framework src='AudioToolbox.framework' />
+        <framework src='CoreAudio.framework' />
+        
+    </platform>
+</plugin>

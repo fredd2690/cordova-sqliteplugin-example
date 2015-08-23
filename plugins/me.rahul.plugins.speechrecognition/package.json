@@ -1,0 +1,15 @@
+{
+    "version": "0.0.1",
+    "name": "me.rahul.plugins.speechrecognition",
+    "cordova_name": "SpeechRecognition",
+    "description": "Convert Speech to Text",
+    "platforms": [
+        "ios"
+    ],
+    "engines": [
+        {
+            "name": "cordova",
+            "version": ">=3.0.0"
+        }
+    ]
+}
